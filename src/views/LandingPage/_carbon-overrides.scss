@@ -1,0 +1,8 @@
+.landing-page__r2 .bx--tabs__nav {
+    right: 0;
+  }
+  .landing-page__heading {
+    @include carbon--type-style("productive-heading-05");
+  }.landing-page__r2 {
+    margin-top: rem(-40px);
+  }
