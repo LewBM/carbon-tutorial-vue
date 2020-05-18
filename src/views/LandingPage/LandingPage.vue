@@ -15,49 +15,48 @@
     <div class="bx--row landing-page__r2">
       <div class="bx--col bx--no-gutter">
         <cv-tabs selected="0" aria-label="Tab navigation">
-        <cv-tab label="About">
-        <div class="bx--grid bx--grid--no-gutter bx--grid--full-width">
+          <cv-tab label="About">
+            <div class="bx--grid bx--grid--no-gutter bx--grid--full-width">
               <div class="bx--row landing-page__tab-content">
                 <div class="bx--col-md-4 bx--col-lg-7">
-                   <h2 class="landing-page__subheading">What is Carbon?</h2>
-                   <p class="landing-page__p">
-                     Carbon is IBM’s open-source design system for digital
-                     products and experiences. With the IBM Design Language as
-                     its foundation, the system consists of working code, design
-                     tools and resources, human interface guidelines, and a
-                     vibrant community of contributors.
+                  <h2 class="landing-page__subheading">What is Carbon?</h2>
+                  <p class="landing-page__p">
+                    Carbon is IBM’s open-source design system for digital
+                    products and experiences. With the IBM Design Language as
+                    its foundation, the system consists of working code, design
+                    tools and resources, human interface guidelines, and a
+                    vibrant community of contributors.
                   </p>
                   <cv-button>Learn more</cv-button>
                 </div>
                 <div class="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
-                 <img
-                   class="landing-page__illo"
-                   src="../../assets/tab-illo.png"
-                   alt="Carbon illustration"
-                 />
-               </div>
-             </div>
-           </div>
-         </cv-tab>
-            <div class="bx--grid bx--grid--no-gutter bx--grid--full-width">
-              <div class="bx--row landing-page__tab-content">
-                <div class="bx--col-md-4 bx--col-lg-7">7/16</div>
-                <div class="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
-                  8/16
+                  <img
+                    class="landing-page__illo"
+                    src="../../assets/tab-illo.png"
+                    alt="Carbon illustration"
+                  />
                 </div>
               </div>
             </div>
-    
+          </cv-tab>
+          <div class="bx--grid bx--grid--no-gutter bx--grid--full-width">
+            <div class="bx--row landing-page__tab-content">
+              <div class="bx--col-md-4 bx--col-lg-7">7/16</div>
+              <div class="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
+                8/16
+              </div>
+            </div>
+          </div>
           <cv-tab label="Design">
             <div class="bx--grid bx--grid--no-gutter bx--grid--full-width">
               <div class="bx--row landing-page__tab-content">
                 <div class="bx--col-lg-16">
-                Rapidly build beautiful and accessible experiences. The Carbon
-                kit contains all resources you need to get started.
+                  Rapidly build beautiful and accessible experiences. The Carbon
+                  kit contains all resources you need to get started.
                 </div>
-                     </div>
-                </div>
-            </cv-tab>
+              </div>
+            </div>
+          </cv-tab>
           <cv-tab label="Develop">
             <div class="bx--grid bx--grid--no-gutter bx--grid--full-width">
               <div class="bx--row landing-page__tab-content">
@@ -82,20 +81,70 @@
   </div>
 </template>
 
-const props = {
-  tabs: {
-    selected: 0,
-    triggerHref: "#",
-    role: "navigation",
-  },
-  tab: {
-    href: "#",
-    role: "presentation",
-    tabIndex: 0,
-  },
+<script>
+export default {
+  props: {
+    tabs: {
+      selected: 0,
+      triggerHref: '#',
+      role: 'navigation'
+    },
+    tab: {
+      href: '#',
+      role: 'presentation',
+      tabIndex: 0
+    }
+  }
 };
+</script>
 
 <style lang="scss">
 @import './carbon-overrides';
-@import '../../styles/carbon-utils';
+@import './mixins';
+
+.landing-page__illo {
+  max-width: 100%;
+}
+
+.landing-page__banner {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-07 * 4;
+  @include landing-page-background;
+}
+
+.landing-page__heading {
+  @include carbon--type-style('productive-heading-05');
+}
+
+.landing-page__r2 {
+  margin-top: rem(-40px);
+}
+.landing-page__tab-content {
+  padding-top: $layout-05;
+  padding-bottom: $layout-05;
+}
+
+.landing-page__subheading {
+  @include carbon--type-style('productive-heading-03');
+  @include carbon--font-weight('semibold');
+}
+
+.landing-page__p {
+  @include carbon--type-style('productive-heading-03');
+  margin-top: $spacing-06;
+  margin-bottom: $spacing-08;
+
+  @include carbon--breakpoint-between((320px + 1), md) {
+    max-width: 75%;
+  }
+}
+.landing-page__r3 {
+  padding-top: $spacing-09;
+  padding-bottom: $spacing-09;
+  @include landing-page-background;
+}
+
+.landing-page__label {
+  @include carbon--type-style('heading-01');
+}
 </style>

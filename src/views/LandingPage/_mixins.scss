@@ -1,6 +1,5 @@
 @import "../../styles/carbon-utils";
 @import "./carbon-overrides";
-@import "./mixins";
 
 @mixin landing-page-background() {
     background-color: $ui-01;
@@ -17,9 +16,4 @@
       z-index: -1;
     }
   }
-  .landing-page__banner {
-    padding-top: $spacing-05;
-    padding-bottom: $spacing-07 * 4;
-    @include landing-page-background;
-  };
   
