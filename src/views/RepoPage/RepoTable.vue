@@ -13,7 +13,10 @@
   </cv-data-table>
 </template>
 
+
 <script>
+import LinkList from './LinkList';
+
 export default {
   name: 'RepoTable',
   props: {
